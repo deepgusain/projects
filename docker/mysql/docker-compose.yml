@@ -1,0 +1,17 @@
+version: '2'
+services:
+  mysql:
+    container_name: demo_mysql
+    restart: always
+    image: mysql/mysql-server:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: 'mytestdb'
+      MYSQL_USER: 'mysql'
+      MYSQL_PASS: 'mysql'
+    ports:
+      - 3306:3306
+    volumes:
+      - my-datavolume:/var/lib/mysql
+volumes:
+  my-datavolume:
